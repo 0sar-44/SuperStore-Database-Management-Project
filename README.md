@@ -7,7 +7,7 @@
 Customer Table
  
  ```sql
-    create table e_commerce.customer (
+    create table SuperStore.customer (
       customer_id int primary key,
       FirstName varchar(50),
       MiddleName varchar(50),
@@ -22,7 +22,7 @@ Customer Table
   Category Table
   
   ```sql
-    create table e_commerce.category (
+    create table SuperStore.category (
       category_id int primary key,
       category_name varchar(255),
       Description varchar(255)
@@ -31,7 +31,7 @@ Customer Table
   Seller Table
   
   ```sql
-    create table e_commerce.seller (
+    create table SuperStore.seller (
       seller_id int primary key,
       seller_name varchar(255),
       seller_phone int(15),
@@ -41,7 +41,7 @@ Customer Table
   Address Table
   
   ```sql
-    create table e_commerce.address(
+    create table SuperStore.address(
       address_id int primary key,
       apart_no int(10),
       apart_name varchar(255),
@@ -56,7 +56,7 @@ Customer Table
   Product Table
   
   ```sql
-    create table e_commerce.product (
+    create table SuperStore.product (
       product_id int primary key,
       product_name varchar(50),
       MRP float,
@@ -71,7 +71,7 @@ Customer Table
   Cart Table
   
 ```sql
-    create table e_commerce.cart (
+    create table SuperStore.cart (
       cart_id int primary key,
       grandtoatl float ,
       itemtotal int,
@@ -84,7 +84,7 @@ Customer Table
   Review Table
   
   ```sql
-    create table e_commerce.review(
+    create table SuperStore.review(
       review_id int primary key,
       description varchar(255),
       rating enum('1','2','3','4','5'),
@@ -97,7 +97,7 @@ Customer Table
   Order Table
   
 ```sql
-    create table e_commerce.order_table(
+    create table SuperStore.order_table(
       order_id int primary key,
       order_date datetime,
       order_amount float,
@@ -113,7 +113,7 @@ Customer Table
   OrderItem Table
 
 ```sql
-    create table e_commerce.orderitem(
+    create table SuperStore.orderitem(
       order_id int,
       product_id int,
       foreign key (order_id) references order_table(order_id) on delete set null on update no action,
@@ -126,7 +126,7 @@ Customer Table
   Payment Table
 
   ```sql
-    create table e_commerce.payment(
+    create table SuperStore.payment(
       paymentMode enum('online','offline'),
       dateofpayment datetime,
       order_id int,
@@ -140,103 +140,99 @@ Customer Table
 
   Customer Table
   ```sql
-      insert into e_commerce.customer values (1,'vivek','umesh','wadher','wadhervivek6904@gmail.com','2004-09-06',2147483647,0);
-      insert into e_commerce.customer values (2,'devansh','hitesh','makawana','devansh@gmail.com','2004-05-23',2147483647,0);
-      insert into e_commerce.customer values (3,'jay','amit','chauhan','jay@gmail.com','2004-05-02',2147483647,0);
+      insert into SuperStore.customer values (1,'vivek','umesh','wadher','wadhervivek6904@gmail.com','2004-09-06',2147483647,0);
+      insert into SuperStore.customer values (2,'devansh','hitesh','makawana','devansh@gmail.com','2004-05-23',2147483647,0);
+      insert into SuperStore.customer values (3,'jay','amit','chauhan','jay@gmail.com','2004-05-02',2147483647,0);
 ```
 
   Category Table
   
   ```sql
-    insert into e_commerce.category values (1,'Mobiles & Computer','all the brands are there like phone, tablets, PC, Desktop '); 
-    insert into e_commerce.category values (2,'TV & Aplliances & Electronics','all the brands are there like tv smart, tv oled, mixer and many more'); 
-    insert into e_commerce.category values (3,'Men`s Fashion','all the brands are there like t-Shirts, jeans, shirts,etc'); 
-    insert into e_commerce.category values (4,'Women`s Fashion','all the brands are there like shorts,one pic, kurti, t-shirt,jeans,etc');
+    insert into SuperStore.category values (1,'Mobiles & Computer','all the brands are there like phone, tablets, PC, Desktop '); 
+    insert into SuperStore.category values (2,'TV & Aplliances & Electronics','all the brands are there like tv smart, tv oled, mixer and many more'); 
+    insert into SuperStore.category values (3,'Men`s Fashion','all the brands are there like t-Shirts, jeans, shirts,etc'); 
+    insert into SuperStore.category values (4,'Women`s Fashion','all the brands are there like shorts,one pic, kurti, t-shirt,jeans,etc');
 ```
 
   Seller Table
   
   ```sql
-  insert into e_commerce.seller values (1,'prem upadhay','1295874636',12000.75);  
-  insert into e_commerce.seller values (2,'jay chauhan','7865423565',38000.20);  
-  insert into e_commerce.seller values (3, 'yash shetty','7465456456',8529.23);
+  insert into SuperStore.seller values (1,'prem upadhay','1295874636',12000.75);  
+  insert into SuperStore.seller values (2,'jay chauhan','7865423565',38000.20);  
+  insert into SuperStore.seller values (3, 'yash shetty','7465456456',8529.23);
 ```
 
   Address Table
 
   ```sql
-insert into e_commerce.address values (1,'108','khodiayr chs ltd','devipada borivali east','maharsahtra','mumbai','400066',1);
-insert into e_commerce.address values (2,'214/B','vitthal chs','rattan nagar kandivali east','maharsahtra','mumbai','400801',2);
-insert into e_commerce.address values (3,'52','oberoi sky city','thakur complex malad east','maharsahtra','mumbai','400526',3);
+insert into SuperStore.address values (1,'108','khodiayr chs ltd','devipada borivali east','maharsahtra','mumbai','400066',1);
+insert into SuperStore.address values (2,'214/B','vitthal chs','rattan nagar kandivali east','maharsahtra','mumbai','400801',2);
+insert into SuperStore.address values (3,'52','oberoi sky city','thakur complex malad east','maharsahtra','mumbai','400526',3);
 ```
 
   Product Table
   
 ```sql
-insert into e_commerce.product values(1,'pen drive',250,52,'hp',2,1);
-insert into e_commerce.product values(2,'monitor',25000,30,'dell',1,3);
-insert into e_commerce.product values(3,'keyborad',765,69,'lenovo',2,2);
-insert into e_commerce.product values(4,'i phone 15',75000,10,'Apple',1,2);
-insert into e_commerce.product values(5,'Mens t-shirts',350,22,'H&M',3,1);
-insert into e_commerce.product values(6,'mens kurta',766,32,'ZARA',3,3);
-insert into e_commerce.product values(7,'women shorts',360,52,'pantaloom',4,2);
-insert into e_commerce.product values(8,'women jeans',699,65,'zudio',4,1);
-insert into e_commerce.product values(9,'mouse',299,65,'lenovo',2,3);
-insert into e_commerce.product values(10,'destop',25000,10,'dell',1,2);
+insert into SuperStore.product values(5,'Mens t-shirts',350,22,'H&M',3,1);
+insert into SuperStore.product values(6,'mens kurta',766,32,'ZARA',3,3);
+insert into SuperStore.product values(7,'women shorts',360,52,'pantaloom',4,2);
+insert into SuperStore.product values(8,'women jeans',699,65,'zudio',4,1);
+insert into SuperStore.product values(9,'mouse',299,65,'lenovo',2,3);
+insert into SuperStore.product values(10,'destop',25000,10,'dell',1,2);
 ```
 
   Cart Table
 
 ```sql
-insert into e_commerce.cart values (1,75000,1,1,4); 
-insert into e_commerce.cart values (2,1050,3,2,5); 
-insert into e_commerce.cart values (3,598,2,3,9); 
-insert into e_commerce.cart values (4,2160,6,2,7); 
-insert into e_commerce.cart values (5,250,1,1,1); 
-insert into e_commerce.cart values (6,3830,6,3,6); 
+insert into SuperStore.cart values (1,75000,1,1,4); 
+insert into SuperStore.cart values (2,1050,3,2,5); 
+insert into SuperStore.cart values (3,598,2,3,9); 
+insert into SuperStore.cart values (4,2160,6,2,7); 
+insert into SuperStore.cart values (5,250,1,1,1); 
+insert into SuperStore.cart values (6,3830,6,3,6); 
 ```
 
   Order Table
 
 ```sql
-insert into e_commerce.order_table values (1,'2023-12-06 10:12:20',75000,'delivery','2023-12-09 09:25:02',1,1); 
+insert into SuperStore.order_table values (1,'2023-12-06 10:12:20',75000,'delivery','2023-12-09 09:25:02',1,1); 
 insert into e_commerce.order_table values (2,'2023-12-07 20:23:20',1050,'delivery','2023-12-12 05:29:02',2,2); 
-insert into e_commerce.order_table values (3,'2023-12-08 18:12:20',598,'delivery','2023-12-23 09:26:02',3,3); 
-insert into e_commerce.order_table values (4,'2023-12-10 15:45:20',2160,'delivery','2023-12-15 11:26:02',2,4); 
-insert into e_commerce.order_table values (5,'2023-12-10 15:45:20',250,'delivery','2023-12-15 11:26:02',1,5); 
-insert into e_commerce.order_table values (6,'2023-12-21 16:23:20',3830,'delivery','2023-12-29 11:35:09',3,6); ****
+insert into SuperStore.order_table values (3,'2023-12-08 18:12:20',598,'delivery','2023-12-23 09:26:02',3,3); 
+insert into SuperStore.order_table values (4,'2023-12-10 15:45:20',2160,'delivery','2023-12-15 11:26:02',2,4); 
+insert into SuperStore.order_table values (5,'2023-12-10 15:45:20',250,'delivery','2023-12-15 11:26:02',1,5); 
+insert into SuperStore.order_table values (6,'2023-12-21 16:23:20',3830,'delivery','2023-12-29 11:35:09',3,6); ****
 ```
 
   Order Item Table
 
 ```sql
-insert into e_commerce.orderitem values (7500,1,1,4);
-insert into e_commerce.orderitem values (1050,3,2,5);
-insert into e_commerce.orderitem values (299,2,3,9);
-insert into e_commerce.orderitem values (360,6,4,7);
-insert into e_commerce.orderitem values (250,1,5,1);
-insert into e_commerce.orderitem values (766,6,6,6);
+insert into SuperStore.orderitem values (7500,1,1,4);
+insert into SuperStore.orderitem values (1050,3,2,5);
+insert into SuperStore.orderitem values (299,2,3,9);
+insert into SuperStore.orderitem values (360,6,4,7);
+insert into SuperStore.orderitem values (250,1,5,1);
+insert into SuperStore.orderitem values (766,6,6,6);
 ```
 
   Payment Table
 
 ```sql
-insert into e_commerce.payment values ('online','2023-12-06 10:12:56',1,1,1);
-insert into e_commerce.payment values ('online','2023-12-07 20:23:20',2,2,2);
-insert into e_commerce.payment values ('online','2023-12-08 18:12:20',3,3,3);
-insert into e_commerce.payment values ('online','2023-12-10 15:45:20',4,2,4);
-insert into e_commerce.payment values ('online','2023-12-10 15:45:20',5,1,5);
-insert into e_commerce.payment values ('online','2023-12-21 16:23:20',6,3,6);
+insert into SuperStore.payment values ('online','2023-12-06 10:12:56',1,1,1);
+insert into SuperStore.payment values ('online','2023-12-07 20:23:20',2,2,2);
+insert into SuperStore.payment values ('online','2023-12-08 18:12:20',3,3,3);
+insert into SuperStore.payment values ('online','2023-12-10 15:45:20',4,2,4);
+insert into SuperStore.payment values ('online','2023-12-10 15:45:20',5,1,5);
+insert into SuperStore.payment values ('online','2023-12-21 16:23:20',6,3,6);
 ```
 
 Review Table
 
 ```sql
-insert into e_commerce.review values (1,'i phone 15 is amazing.','5',1,4);
-insert into e_commerce.review values (2,'wow t-shirts ,good in quality.','3',2,5);
-insert into e_commerce.review values (3,'best mouse in the world.','4',3,9);
-insert into e_commerce.review values (4,'very comfatabale in size and quality.','4',2,7);
-insert into e_commerce.review values (5,'the size is 128mb pendrive, speed is good.','5',1,1);
-insert into e_commerce.review values (6,'size of kurta and quality is good','2',3,6);
+insert into SuperStore.review values (1,'i phone 15 is amazing.','5',1,4);
+insert into SuperStore.review values (2,'wow t-shirts ,good in quality.','3',2,5);
+insert into SuperStore.review values (3,'best mouse in the world.','4',3,9);
+insert into SuperStore.review values (4,'very comfatabale in size and quality.','4',2,7);
+insert into SuperStore.review values (5,'the size is 128mb pendrive, speed is good.','5',1,1);
+insert into SuperStore.review values (6,'size of kurta and quality is good','2',3,6);
 ```
    
